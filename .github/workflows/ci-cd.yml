@@ -141,7 +141,7 @@ jobs:
               web:
                 image: ${IMAGE}
                 ports:
-                  - "8080:80"
+                  - "8083:80"
                 restart: unless-stopped
             EOT
             docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} -p ${{ secrets.GHCR_PAT }}
