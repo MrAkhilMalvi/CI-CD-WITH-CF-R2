@@ -112,7 +112,7 @@ jobs:
         if: ${{ env.VPS_HOST != '' && env.DOCKER_PUSH_ENABLED != '' }}
         uses: appleboy/ssh-action@v1.0.3
         env:
-          IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]'):latest
+          IMAGE_NAME=ghcr.io/mrakhilmalvi/ci-cd-with-cf-r2:latest
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
