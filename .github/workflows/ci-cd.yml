@@ -137,11 +137,11 @@ jobs:
             set -e
             echo "Deploying on VPS: $(hostname)"
             echo "Using image: $IMAGE_NAME"
-            mkdir -p ~/cf-r2-vite-react
-            cat > ~/cf-r2-vite-react/.env <<'EOT'
+            mkdir -p /home/deployer/cf-r2-vite-react
+            cat > /home/deployer/cf-r2-vite-react/.env <<'EOT'
             IMAGE=$IMAGE_NAME
             EOT
-            cat > ~/cf-r2-vite-react/docker-compose.yml <<'EOT'
+            cat > /home/deployer/cf-r2-vite-react/docker-compose.yml <<'EOT'
             services:
               web:
                 image: ${IMAGE}
